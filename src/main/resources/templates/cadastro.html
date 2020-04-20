@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>- Doc</title>
+</head>
+<body>
+    <h1>- Cadastro</h1>    
+
+    <form th:action="@{/cadastra}" method="POST">
+        Nome do funcionario
+        <input type="text" name=">insira nome" required>
+        Salario
+        <input type="text" name=">insira salario" required>
+        Idade
+        <input type="text" name=">insira idade" required>
+        CPF
+        <input type="text" name=">insira cpf">
+        <input type="submit" value="Salvar" required>
+    </form>
+
+    <h1>Funcionarios</h1>
+
+    <table>
+        <tr th:each="funcionario : ${funcionarios}">
+            <td th:text="${funcionario?.codigo}"></td>
+            <td th:text="${funcionario?.nome}"></td>
+            <td th:text="${funcionario?.salario}"></td>
+            <td th:text="${funcionario?.idade}"></td>
+            <td th:text="${funcionario?.cpf}"></td>            
+        </tr>
+    </table>
+
+</body>
+</html>
